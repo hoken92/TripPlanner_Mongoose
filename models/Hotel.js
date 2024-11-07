@@ -15,8 +15,8 @@ const pointSchema = new Schema({
 const hotelSchema = new Schema({
   type: String,
   hotel: {
-    type: String,
     name: String,
+    // type: String,
     cityCode: String,
     geolocation: pointSchema,
   },
