@@ -39,4 +39,6 @@ const eventSchema = new Schema({
   },
 });
 
+eventSchema.index({ event_date: 1 });
+
 export default model("Event", eventSchema);

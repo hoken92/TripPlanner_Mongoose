@@ -39,4 +39,6 @@ const flightSchema = new Schema({
   },
 });
 
+flightSchema.index({ departureDate: 1 });
+
 export default model("Flight", flightSchema);

@@ -37,4 +37,6 @@ const hotelSchema = new Schema({
   ],
 });
 
+hotelSchema.index({ hotel: 1 });
+
 export default model("Hotel", hotelSchema);
