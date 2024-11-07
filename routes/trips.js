@@ -1,5 +1,6 @@
 import express from "express";
 import Trip from "../models/Trip.js";
+import { populate } from "dotenv";
 
 const router = express.Router();
 
@@ -16,7 +17,10 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const trips = await Trip.find(req.query);
+    const trips = await Trip.find(req.query)
+      .populate("event_info")
+      .populate("flight_info")
+      .populate("hotel_info");
     res.status(200).json(trips);
   } catch (err) {
     res.send(err).status(400);
@@ -26,7 +30,11 @@ router.get("/", async (req, res) => {
 // Create a new Trip
 router.post("/", async (req, res) => {
   try {
-    const newTrip = await Trip.create(req.body);
+    const newTrip = new Trip(req.body);
+    newTrip.date = new Date(req.body.date);
+
+    await newTrip.save();
+
     res.status(200).json(newTrip);
   } catch (err) {
     res.status(400).send(err);
@@ -36,7 +44,7 @@ router.post("/", async (req, res) => {
 // Update a Trip
 router.put("/:id", async (req, res) => {
   try {
-    const updatedTrip = await User.findByIdAndUpdate(req.params.id, req.body, {
+    const updatedTrip = await Trip.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
     res.status(200).json(updatedTrip);
@@ -48,7 +56,7 @@ router.put("/:id", async (req, res) => {
 // Delete a Trip
 router.delete("/:id", async (req, res) => {
   try {
-    const deletedTrip = await User.findByIdAndDelete(req.params.id);
+    const deletedTrip = await Trip.findByIdAndDelete(req.params.id);
     res.status(200).json(deletedTrip);
   } catch (err) {
     res.send(err).status(400);

@@ -20,6 +20,10 @@ const tripSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Hotel",
   },
+  created_at: {
+    type: Date,
+    default: () => Date.now(),
+  },
 });
 
 export default model("Trip", tripSchema);
