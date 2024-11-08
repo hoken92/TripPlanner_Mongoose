@@ -624,6 +624,18 @@ try {
       event_info: "672af80ab4a207732c5123e8",
       flight_info: "672b0d6eb4a207732c512409",
     },
+    {
+      name: "My 2nd Coachella",
+      date: "2025-04-11T00:00:00.000Z",
+      event_info: "672af7b6b4a207732c5123dc",
+      flight_info: "672b0d6eb4a207732c512409",
+    },
+    {
+      name: "One more time",
+      date: "2025-07-03T00:00:00.000Z",
+      event_info: "672af7ccb4a207732c5123e0",
+      hotel_info: "672b0245b4a207732c5123f6",
+    },
   ];
 
   const createdTrips = await Trip.create(trips);
