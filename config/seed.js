@@ -609,7 +609,9 @@ try {
     {
       name: "First TomorrowLand",
       date: "2025-07-18T00:00:00.000Z",
-      created_at: "2024-11-07T05:07:26.753Z",
+      event_info: "672af7f5b4a207732c5123e4",
+      flight_info: "672b0d6eb4a207732c512407",
+      hotel_info: "672b0245b4a207732c5123f8",
     },
     {
       name: "My Draft Trip",
@@ -619,7 +621,8 @@ try {
     {
       name: "Last Vegas",
       date: "2025-04-19T00:00:00.000Z",
-      created_at: "2024-11-07T05:15:40.857Z",
+      event_info: "672af80ab4a207732c5123e8",
+      flight_info: "672b0d6eb4a207732c512409",
     },
   ];
 
