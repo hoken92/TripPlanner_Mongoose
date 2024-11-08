@@ -42,6 +42,7 @@ This Backend using Mongoose and MongoDB contains events, flights, hotels and tri
 | Trips      | ---------                       | ------                                                                    |
 | GET        | /trips                          | Retrieves all trips                                                       |
 | POST       | /trips                          | Creates a trips                                                           |
+| POST       | /trips                          | Try posting without a name key/value in body to receive an error          |
 | PATCH/PUT  | /trips/:id                      | Updates a trip by id param                                                |
 | DELETE     | /trips/:id                      | Deletes a trip by id param                                                |
 
